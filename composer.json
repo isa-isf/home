@@ -1,15 +1,15 @@
 {
-    "name": "wordplate/wordplate",
-    "description": "A modern WordPress stack to make PHP developers happier",
+    "name": "isa-isf/home",
+    "description": "Homepage for isa-isf.",
     "keywords": [
         "wordplate",
         "wordpress",
-        "boilerplate"
+        "isf"
     ],
-    "license": "MIT",
+    "license": "AGPL-3.0-or-later",
     "require": {
-        "php": "^7.2",
-        "wordplate/framework": "^9.0"
+        "php": "^8.0",
+        "wordplate/framework": "^9.4"
     },
     "config": {
         "optimize-autoloader": true,
