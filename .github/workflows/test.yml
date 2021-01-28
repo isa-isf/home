@@ -27,7 +27,9 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest
       - uses: bahmutov/npm-install@v1
       - name: Copy .env
-        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+        run: |
+          php -r "file_exists('.env') || copy('.env.example', '.env');"
+          php -r "file_exists('wp-cli.yml') || copy('wp-cli.yml.example', 'wp-cli.yml');"
       - name: Run test suite
         run: ./vendor/bin/pest
 

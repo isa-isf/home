@@ -49,7 +49,8 @@
     },
     "scripts": {
         "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php -r \"file_exists('wp-cli.yml') || copy('wp-cli.yml.example', 'wp-cli.yml');\""
         ]
     }
 }
