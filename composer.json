@@ -7,29 +7,6 @@
         "isf"
     ],
     "license": "AGPL-3.0-or-later",
-    "require": {
-        "php": "^8.0",
-        "wordplate/framework": "^9.4"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "extra": {
-        "installer-paths": {
-            "public/mu-plugins/{$name}": [
-                "type:wordpress-muplugin"
-            ],
-            "public/plugins/{$name}": [
-                "type:wordpress-plugin"
-            ],
-            "public/themes/{$name}": [
-                "type:wordpress-theme"
-            ]
-        },
-        "wordpress-install-dir": "public/wordpress"
-    },
     "repositories": [
         {
             "type": "composer",
@@ -40,12 +17,39 @@
             ]
         }
     ],
+    "require": {
+        "php": "^8.0",
+        "wordplate/framework": "^9.4",
+        "wpackagist-plugin/wordpress-importer": "^0.7.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.0",
+        "roave/security-advisories": "dev-master",
+        "wpackagist-plugin/spatie-ray": "^1.2"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "installer-paths": {
+            "public/mu-plugins/{$name}": [
+                "type:wordpress-muplugin",
+                "wpackagist-plugin/spatie-ray"
+            ],
+            "public/plugins/{$name}": [
+                "type:wordpress-plugin"
+            ],
+            "public/themes/{$name}": [
+                "type:wordpress-theme"
+            ]
+        },
+        "wordpress-install-dir": "public/wordpress"
+    },
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
-    },
-    "require-dev": {
-        "pestphp/pest": "^1.0"
     }
 }
