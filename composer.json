@@ -7,6 +7,8 @@
         "isf"
     ],
     "license": "AGPL-3.0-or-later",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
     "repositories": [
         {
             "type": "composer",
@@ -15,10 +17,15 @@
                 "wpackagist-plugin/*",
                 "wpackagist-theme/*"
             ]
+        },
+        {
+            "type": "path",
+            "url": "./src/smtp"
         }
     ],
     "require": {
         "php": "^8.0",
+        "isf/wp-smtp": "*",
         "wordplate/framework": "^9.4",
         "wpackagist-plugin/wordpress-importer": "^0.7.0"
     },

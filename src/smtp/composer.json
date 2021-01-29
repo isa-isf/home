@@ -1,0 +1,19 @@
+{
+  "name": "isf/wp-smtp",
+  "description": "SMTP Support for wordpress",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "AGPL-3.0-or-later",
+  "type": "wordpress-muplugin",
+  "authors": [
+    {
+      "name": "BinotaLIU",
+      "email": "me@binota.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ISF\\WP\\SMTP\\": "src/"
+    }
+  }
+}
