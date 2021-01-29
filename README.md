@@ -26,7 +26,7 @@ $ wp core install \
   --admin_user=admin \
   --admin_email=admin@isf-home.test \
   --skip-email
-$ wp language core activate zh_TW
+$ wp site switch-language zh_TW
 ```
 
 ## Development
