@@ -21,10 +21,15 @@
         {
             "type": "path",
             "url": "./src/smtp"
+        },
+        {
+            "type": "path",
+            "url": "./src/argon2id"
         }
     ],
     "require": {
         "php": "^8.0",
+        "isf/wp-argon2id": "*",
         "isf/wp-smtp": "*",
         "wordplate/framework": "^9.4",
         "wpackagist-plugin/wordpress-importer": "^0.7.0"
@@ -33,6 +38,9 @@
         "pestphp/pest": "^1.0",
         "roave/security-advisories": "dev-master",
         "wpackagist-plugin/spatie-ray": "^1.2"
+    },
+    "replace": {
+        "roots/wp-password-bcrypt": "*"
     },
     "config": {
         "optimize-autoloader": true,

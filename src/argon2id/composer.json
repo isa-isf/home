@@ -1,0 +1,22 @@
+{
+    "name": "isf/wp-argon2id",
+    "description": "Provide Argon2id password hash for wordpress.",
+    "type": "wordpress-muplugin",
+    "license": "AGLP-3.0-or-later",
+    "authors": [
+        {
+            "name": "BinotaLIU",
+            "email": "binota@binota.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "conflict": {
+      "roots/wp-password-bcrypt": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ISF\\WP\\Argon2id\\": "src/"
+        }
+    }
+}
