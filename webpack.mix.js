@@ -19,4 +19,4 @@ mix.setResourceRoot('../');
 mix.setPublicPath(`public/themes/${theme}/assets`);
 
 mix.js('resources/scripts/app.js', 'scripts');
-mix.sass('resources/styles/app.scss', 'styles');
+mix.postCss('resources/styles/app.css', 'styles', [require('tailwindcss')]);
