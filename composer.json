@@ -16,6 +16,15 @@
         },
         {
             "type": "composer",
+            "url": "https://wp-languages.github.io",
+            "only": [
+                "koodimonni-language",
+                "koodimonni-theme-language/*",
+                "koodimonni-plugin-language/*"
+            ]
+        },
+        {
+            "type": "composer",
             "url": "https://wpackagist.org",
             "only": [
                 "wpackagist-plugin/*",
@@ -36,6 +45,8 @@
         "fiskhandlarn/blade": "dev-master",
         "isf/wp-argon2id": "*",
         "isf/wp-smtp": "*",
+        "koodimonni-language/zh_tw": "*",
+        "koodimonni/composer-dropin-installer": "^1.3",
         "wordplate/framework": "^9.4",
         "wpackagist-plugin/wordpress-importer": "^0.7.0"
     },
@@ -58,12 +69,13 @@
                 "type:wordpress-muplugin",
                 "wpackagist-plugin/spatie-ray"
             ],
-            "public/plugins/{$name}": [
-                "type:wordpress-plugin"
-            ],
-            "public/themes/{$name}": [
-                "type:wordpress-theme"
-            ]
+            "public/plugins/{$name}": ["type:wordpress-plugin"],
+            "public/themes/{$name}": ["type:wordpress-theme"]
+        },
+        "dropin-paths": {
+            "public/languages/": ["vendor:koodimonni-language"],
+            "public/languages/themes": ["vendor:koodimonni-theme-language"],
+            "public/languages/plugins": ["vendor:koodimonni-plugin-language"]
         },
         "wordpress-install-dir": "public/wordpress"
     },

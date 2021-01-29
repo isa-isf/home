@@ -11,9 +11,6 @@
     ],
     "minimum-stability": "dev",
     "require": {},
-    "conflict": {
-      "roots/wp-password-bcrypt": "*"
-    },
     "autoload": {
         "psr-4": {
             "ISF\\WP\\Argon2id\\": "src/"
