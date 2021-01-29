@@ -27,6 +27,7 @@ $ wp core install \
   --admin_email=admin@isf-home.test \
   --skip-email
 $ wp site switch-language zh_TW
+$ wp option set permalink_structure "/%year%/%monthnum%/%day%/%postname%/"
 ```
 
 ## Development

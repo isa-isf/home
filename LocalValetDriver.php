@@ -1,24 +1,13 @@
 <?php
 
-class LocalValetDriver extends LaravelValetDriver
+final class LocalValetDriver extends LaravelValetDriver
 {
-    /**
-     * Determine if the driver serves the request.
-     *
-     * @param  string  $sitePath
-     * @param  string  $siteName
-     * @param  string  $uri
-     * @return bool
-     */
     public function serves($sitePath, $siteName, $uri)
     {
         return true;
     }
 
-    /**
-     * @return false|string
-     */
-    public function isStaticFile($sitePath, $siteName, $uri)
+    public function isStaticFile($sitePath, $_, $uri)
     {
         $staticFilePath = $sitePath . '/public' . $uri;
 
@@ -29,12 +18,12 @@ class LocalValetDriver extends LaravelValetDriver
         return false;
     }
 
-    public function frontControllerPath($sitePath, $siteName, $uri)
+    public function frontControllerPath($sitePath, $_, $uri)
     {
         $_SERVER['PHP_SELF'] = $uri;
         $_SERVER['SERVER_NAME'] = $_SERVER['HTTP_HOST'];
 
-        if (strpos($uri, '/wordpress/') === 0) {
+        if (str_starts_with($uri, '/wordpress/')) {
             if (is_dir($sitePath . '/public' . $uri)) {
                 $uri = $this->forceTrailingSlash($uri);
 
@@ -49,7 +38,7 @@ class LocalValetDriver extends LaravelValetDriver
 
     private function forceTrailingSlash(string $uri): string
     {
-        if (substr($uri, -1 * strlen('/wordpress/wp-admin')) == '/wordpress/wp-admin') {
+        if (str_ends_with($uri, '/wordpress/wp-admin')) {
             header('Location: ' . $uri . '/');
             die;
         }

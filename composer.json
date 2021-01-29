@@ -11,6 +11,10 @@
     "minimum-stability": "dev",
     "repositories": [
         {
+            "type": "vcs",
+            "url": "https://github.com/binotaliu/wp-blade"
+        },
+        {
             "type": "composer",
             "url": "https://wpackagist.org",
             "only": [
@@ -29,6 +33,7 @@
     ],
     "require": {
         "php": "^8.0",
+        "fiskhandlarn/blade": "dev-master",
         "isf/wp-argon2id": "*",
         "isf/wp-smtp": "*",
         "wordplate/framework": "^9.4",
